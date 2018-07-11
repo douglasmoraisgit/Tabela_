@@ -1,0 +1,169 @@
+.container {
+	width: 785px;
+	margin: 0 auto 0 auto;
+}
+	       
+	       
+.grupo_1 {
+	       width:395px;
+           float: left;
+         }
+         	 
+.grupo_2 {float: left;
+          width:385px;
+
+}	
+  
+.grupo_3 { clear:both;
+          
+}    
+.opcoes {	border:1px solid;
+	        border-color:#CDAF95;
+            padding-top: 10px;
+            padding-left: 10px;
+        	height:330px;
+        	width:365px;
+        	background-color: #F5F5DC;
+        	font-family: sans-serif;
+        	font-size: 12px;
+		}
+		
+.receita	{ border:1px solid;
+	          border-color:#CDAF95;
+              padding-top: 10px;
+              padding-left: 10px;
+              height: 330px;
+              width: 365px;
+              background-color: #F5F5DC;
+        	  font-family: sans-serif;
+        	  font-size: 12px;
+        	  margin-bottom: 10px;
+            }	
+	
+
+fieldset {
+	   
+		font-family: sans-serif;
+		border-width: 2px;
+		margin-left: 1px;
+		
+       	}
+legend {
+	       font-size: 12px;
+	       font-style:italic;
+	       /*font-weight: bold;*/
+	       border-radius: 5px;
+	       background-color:#ddd;
+	       color:#00f;
+	    }
+	
+/*.checkboxes label {
+  display: block;
+  float: left;
+  padding-right: 10px;
+  padding-left: 22px;
+  text-indent: -22px;
+}*/
+
+.checkboxes label {
+  display: block;
+  }
+  
+  .table {
+  font-size: 11px;
+  }
+
+
+ td { text-align:center; }
+
+.thead, tr, td {
+	font-size: 11px;
+}
+.checkboxes input {
+  vertical-align: middle;
+}
+.checkboxes label span {
+  vertical-align: middle;
+}
+	
+	/*input {
+	        border-width: 1px;
+	    	border-color: blue;
+	        border-radius: 5px;
+			/*font-weight: bold;*/
+	/*		font-size: 14px;
+			margin-bottom: 14px;	     
+	} */
+	
+	
+
+  .material {
+  diplay:block; 
+  float:left;
+  border: 2px;
+  margin:5px;
+  color: orange;
+  border:1px solid;
+  border-color: #EEDFCC;
+  width: 115px;
+  }
+  
+  .tratamento {
+ diplay:block;
+ float:left;
+ border: 2px; 
+ margin:5px;
+ color: orange; 
+ border:1px solid;
+ border-color: #EEDFCC;
+ width: 115px;
+ }
+ 
+  .fotossensivel {
+ diplay:block;
+float:left;
+ border: 2px; 
+ margin:5px;
+ color: orange; 
+ border:1px solid;
+ border-color: #EEDFCC;
+ width: 115px;
+ }
+ 
+  .indice {
+ diplay:block;
+ float:left;
+ border: 2px; 
+ margin:5px;
+ color: orange; 
+ border:1px solid;
+ border-color: #EEDFCC;
+ width: 115px;
+ }
+ 
+ .tipo_lente {
+ border: 2px; 
+ margin:5px;
+ color: orange; 
+ border:1px solid;
+ border-color: #EEDFCC;
+ height: 35px;
+ padding-top: 10px;
+ 
+ 
+ }
+    
+	
+p { font-size: 10px;
+	font-weight: bold;
+	margin-bottom: 3px;
+  }
+	    
+table, td, th, tfoot {border:solid 1px #000; padding:5px;
+font-family:sans-serif;}
+th {background-color:#999;}
+caption {font-size:x-large;}
+colgroup {background:#F60;}
+.coluna1 {background:#F66;}
+.coluna2  {background:#F33;}
+.coluna3  {background:#F99;}

@@ -1,0 +1,68 @@
+CONSULTAS SQL
+
+Consulta Fornecedor, Produto, Valor :
+-------------------------------------
+
+   select (select nome_fornecedor from fornecedor where tabela.id_fornecedor=fornecedor.id_fornecedor) as Fornecedor,
+   nome_produto as Produto,
+   tbl_valor as Valor from produto
+   natural join
+   tabela
+   
+   select (select nome_fornecedor from fornecedor where tabela.id_fornecedor=fornecedor.id_fornecedor) as Fornecedor,
+   nome_produto as Produto,
+   tbl_valor as Valor from produto
+   natural join
+   tabela
+   where tabela.id_produto=3
+
+
+
+
+CREATE TABLE tabela_custo (       
+   idProduto integer not null,       
+   idFornecedor integer not null,  
+   valorProduto decimal(10,2), 
+    primary key (idProduto, idFornecedor),    
+    constraint chave_estrangeira1 foreign key (idProduto) references produto( idProduto),       
+    constraint chave_estrangeira2 foreign key (idFornecedor) references fornecedor (idFornecedor)       
+) TYPE=INNODB; 
+
+
+SELECT   
+  p.nomeProduto,   
+  f.nomeFornecedor,   
+  tc.valorProduto   
+FROM   
+  produto p,   
+  fornecedor f,   
+  tabela_custo tc   
+WHERE   
+  tc.idProduto = p.idProduto   
+  AND tc.idFornecedor = f.idFornecedor   
+  AND p.nomeProduto = 'bifocal'   
+; 
+
+CREATE TABLE tabela_custo (       
+   idProduto integer not null,       
+   idFornecedor integer not null,  
+   valorProduto decimal(10,2), 
+    primary key (idProduto, idFornecedor),    
+    constraint chave_estrangeira1 foreign key (idProduto) references produto( idProduto),       
+    constraint chave_estrangeira2 foreign key (idFornecedor) references fornecedor (idFornecedor)       
+) TYPE=INNODB; 
+
+
+SELECT   
+  p.nomeProduto,   
+  f.nomeFornecedor,   
+  tc.valorProduto   
+FROM   
+  produto p,   
+  fornecedor f,   
+  tabela_custo tc   
+WHERE   
+  tc.idProduto = p.idProduto   
+  AND tc.idFornecedor = f.idFornecedor   
+  AND p.nomeProduto = 'bifocal'   
+; 

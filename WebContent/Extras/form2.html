@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Required meta tags -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- Bootstrap CSS -->
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+ <link rel="stylesheet" href="./CSS/mycss.css">
+ <script src="./JS/js.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="grupo_1">
+<div class="receita">
+<fieldset style="margin-bottom: 15px;width: 340px;height: 72px" ><legend>Olho Direito</legend>
+<div style="float: left;">
+	<p style="display: block; margin-right: 10px">Esférico   :</p><input onblur="insertcode();"style="margin-right: 10px; text-align: right;" type="text" size="10" maxlength="10">
+</div>
+<div style="float: left;">
+	<p style="display:block; margin-right: 10px">Cilíndrico :</p><input onblur="insertcode();"style="margin-right: 10px; text-align: right;" type="text" size="10" maxlength="10" >
+</div>
+<div style="float: left;">
+	<p style="display:block; margin-right: 15px">Adição :</p><input style="margin-right: 10px; text-align: right;" type="text" size="10" maxlength="10">
+</div>
+</fieldset>
+<fieldset style="margin-bottom: 10px;width: 340px; height: 72px;"><legend>Olho Esquerdo</legend>
+	<div style="float: left;">
+	<p style="display: block; margin-right: 10px">Esférico   :</p><input onblur="insertcode();"style="margin-right: 10px; text-align: right;" type="text" size="10" maxlength="10">
+</div>
+<div style="float: left;">
+	<p style="display:block; margin-right: 10px">Cilíndrico :</p><input onblur="insertcode();"style="margin-right: 10px; text-align: right;" type="text" size="10" maxlength="10" >
+</div>
+<div style="float: left;">
+	<p style="display:block; margin-right: 10px">Adição :</p><input style="margin-right: 10px; text-align: right;" type="text" size="10" maxlength="10">
+</div>
+</fieldset>
+<fieldset style="width: 340px;height: 65px;">
+<legend>Tipo de Lente</legend>
+<div class="tipo_lente">
+<div style="width:105px;float: left; margin: auto;">
+<label for="visaosimples"><input type="checkbox" id="visaosimples" /> <span>Visao Simples</span></label>
+</div>
+<div style="width: 105px;float: left;margin:auto;text-align: center;">
+<label for="bifocal"><input type="checkbox" id="bifocal" /> <span>Bifocal</span></label>
+</div>
+<div style="width: 105px;float: left;">
+<label for="multifocal"><input type="checkbox" id="multifocal" /> <span>Multifocal</span></label>
+</div>
+</div>
+</fieldset>
+</div>
+
+<div class="opcoes">
+<div class="checkboxes">
+ <fieldset style="width: 150px; height:135px;float: left;margin-right: 8px;">
+ <legend>Material</legend>
+ <div class="material">
+    <label for="acrilico"><input type="checkbox" id="acrilico" /> <span>Acrílico</span></label>
+    <label for="policarbonato"><input type="checkbox" id="policarbonato" /> <span>Policarbonato</span></label>
+    <label for="trivex"><input type="checkbox" id="trivex" /> <span>Trivex</span></label>
+    <label for="cristal"><input type="checkbox" id="cristal" /> <span>Cristal</span></label>
+    <label for="highlite"><input type="checkbox" id="highlite" /> <span>High-Lite</span></label>
+ </div>
+ </fieldset>
+ <fieldset style="width: 150px;height:135px;float:  left;margin-left:  8px;">
+ <legend>Tratamento</legend>
+  <div class="tratamento"> 
+    <label for="comum"><input type="checkbox" id="comum" /> <span>Sem Tratamento</span></label>
+    <label for="antireflexo"><input type="checkbox" id="antireflexo" /> <span>Anti-Reflexo</span></label>
+    <label for="colorido"><input type="checkbox" id="colorido" /> <span>Colorido</span></label>
+    <label for="fotossensivel"><input type="checkbox" id="fotossensivel" /> <span>Fotossensível</span></label>
+   </div>
+  </fieldset>
+  
+  </div>
+  </div>
+  </div>
+<div class="grupo_2">
+<table style="width: 300px; font-size: 12px">
+<thead><tr><th colspan="5">Tabela de preços</th></tr></thead>
+<tfoot><tr><td colspan="5"></td></tr></tfoot>
+<tbody>
+<tr>
+<td rowspan="8" align="center">Essilor</td>
+<td rowspan="2">CRIZAL EASY</td>
+<td>Acrílico</td>
+<td>Airwear</td>
+<td>Transistions</td>
+</tr>
+<tr>
+<td>$500</td>
+<td>$640</td>
+<td>$650</td>
+</tr>
+<tr>
+       <td rowspan="2">CRIZAL ALIZE</td>
+           <td>Acrílico</td>
+           <td>Airwear</td>
+           <td>Transistions</td>
+        </tr>
+        <tr>
+           <td>$500</td>
+           <td>$640</td>
+           <td>$650</td>
+       </tr>
+       <tr>
+         <td rowspan="2">CRIZAL FORTE</td>
+           <td>Acrílico</td>
+           <td>Airwear</td>
+           <td>Transistions</td>
+        </tr>
+        <tr>
+           <td>$500</td>
+           <td>$640</td>
+           <td>$650</td>
+       </tr>
+</tbody>
+<tbody>
+<tr>
+<td rowspan="8">Hoya</td>
+<td rowspan="2">CRIZAL EASY</td>
+<td>Acrílico</td>
+<td>Airwear</td>
+<td>Transistions</td>
+</tr>
+<tr>
+<td>$500</td>
+<td>$640</td>
+<td>$650</td>
+</tr>
+<tr>
+       <td rowspan="2">CRIZAL ALIZE</td>
+           <td>Acrílico</td>
+           <td>Airwear</td>
+           <td>Transistions</td>
+        </tr>
+        <tr>
+           <td>$500</td>
+           <td>$640</td>
+           <td>$650</td>
+       </tr>
+       <tr>
+         <td rowspan="2">CRIZAL FORTE</td>
+           <td>Acrílico</td>
+           <td>Airwear</td>
+           <td>Transistions</td>
+        </tr>
+        <tr>
+           <td>$500</td>
+           <td>$640</td>
+           <td>$650</td>
+       </tr>
+</tbody>
+<tbody>
+<tr>
+<td rowspan="8">Essilor</td>
+<td rowspan="2">CRIZAL EASY</td>
+<td>Acrílico</td>
+<td>Airwear</td>
+<td>Transistions</td>
+</tr>
+<tr>
+<td>$500</td>
+<td>$640</td>
+<td>$650</td>
+</tr>
+<tr>
+       <td rowspan="2">CRIZAL ALIZE</td>
+           <td>Acrílico</td>
+           <td>Airwear</td>
+           <td>Transistions</td>
+        </tr>
+        <tr>
+           <td>$500</td>
+           <td>$640</td>
+           <td>$650</td>
+       </tr>
+       <tr>
+         <td rowspan="2">CRIZAL FORTE</td>
+           <td>Acrílico</td>
+           <td>Airwear</td>
+           <td>Transistions</td>
+        </tr>
+        <tr>
+           <td>$500</td>
+           <td>$640</td>
+           <td>$650</td>
+       </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>-->
+</body>
+</html>

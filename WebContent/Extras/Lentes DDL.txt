@@ -1,0 +1,50 @@
+CREATE TABLE tabela_custo (       
+   idProduto integer not null,       
+   idFornecedor integer not null,  
+   valorProduto decimal(10,2), 
+    primary key (idProduto, idFornecedor),    
+    constraint chave_estrangeira1 foreign key (idProduto) references produto( idProduto),       
+    constraint chave_estrangeira2 foreign key (idFornecedor) references fornecedor (idFornecedor)       
+) TYPE=INNODB; 
+
+
+SELECT   
+  p.nomeProduto,   
+  f.nomeFornecedor,   
+  tc.valorProduto   
+FROM   
+  produto p,   
+  fornecedor f,   
+  tabela_custo tc   
+WHERE   
+  tc.idProduto = p.idProduto   
+  AND tc.idFornecedor = f.idFornecedor   
+  AND p.nomeProduto = 'bifocal'   
+; 
+
+
+CREATE TABLE produtos (
+id INT(5) AUTO_INCREMENT PRIMARY KEY,
+material VARCHAR(30) NOT NULL, 
+tratamento VARCHAR(30) NOT NULL,
+descricao VARCHAR(30) NOT NULL,
+esf_ini DECIMAL(4,2) NOT NULL,
+esf_fim DECIMAL(4,2) NOT NULL,
+cil_ini DECIMAL(4,2) NOT NULL,
+cil_fim DECIMAL(4,2) NOT NULL
+) ENGINE=MyISAM;
+
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('CR39','CRIZAL','ORMA CRIZAL', -0.25, -2.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('CR39','CRIZAL','ORMA CRIZAL', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('CR39','CRIZAL','ORMA CRIZAL', -4.25, -6.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('CR39','ANTIREFLEXO','KLAR UV 1.56 AR', -0.25, -2.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('CR39','ANTIREFLEXO','KLAR UV 1.56 AR', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('POLICARBONATO','CRIZAL','AIRWEAR', -0.25, -5.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('POLICARBONATO','ANTIREFLEXO','KLAR UV POLY AR', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('TRIVEX','ULTRAX','ULTRAX TRIVEX', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('STYLIS','CRIZAL ALIZE','STYLIS CRIZAL ALIZE', -4.25, -8.00, -0.25, -2.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('CR39','ANTIREFLEXO','KLAR UV 1.56 AR', 0.00, -4.00, -0.25, -4.00);
+insert into produtos (material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('POLICARBONATO','ANTIREFLEXO','KLAR UV POLI AR', 0.00, -5.00, -0.25, -5.00);
+
+
+select * from produtos where esf_ini >= ? and esf_fim >= ? and cil_ini >= ? and cil_fim >= ?

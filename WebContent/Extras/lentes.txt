@@ -1,0 +1,124 @@
+CREATE TABLE `fornecedor` (
+ 
+ `idFornecedor` int(11) AUTO_INCREMENT,
+  
+`nomeFornecedor` varchar(40) DEFAULT NULL,
+ 
+ PRIMARY KEY (`idFornecedor`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('ORMA CRIZAL','CR39','CRIZAL','LENTE ORMA CRIZAL', -0.25, -2.00, -0.25, -2.00);
+
+
+
+CREATE TABLE tabela_custo (       
+   idProduto integer not null,       
+   idFornecedor integer not null,  
+   valorProduto decimal(10,2), 
+    primary key (idProduto, idFornecedor),    
+    constraint chave_estrangeira1 foreign key (idProduto) references produto( idProduto),       
+    constraint chave_estrangeira2 foreign key (idFornecedor) references fornecedor (idFornecedor)       
+) TYPE=INNODB; 
+
+
+SELECT   
+  p.nomeProduto,   
+  f.nomeFornecedor,   
+  tc.valorProduto   
+FROM   
+  produto p,   
+  fornecedor f,   
+  tabela_custo tc   
+WHERE   
+  tc.idProduto = p.idProduto   
+  AND tc.idFornecedor = f.idFornecedor   
+  AND p.nomeProduto = 'bifocal'   
+; 
+
+
+
+CREATE TABLE `tabela_custo` (
+ 
+`idProduto` int(11) NOT NULL,
+  
+`idFornecedor` int(11) NOT NULL,
+  
+`valorProduto` decimal(10,2) DEFAULT NULL,
+ 
+ PRIMARY KEY (`idProduto`,`idFornecedor`),
+  
+KEY `chave_estrangeira2` (`idFornecedor`),
+  
+CONSTRAINT `chave_estrangeira1` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`),
+  
+CONSTRAINT `chave_estrangeira2` FOREIGN KEY (`idFornecedor`) REFERENCES `fornecedor` (`idFornecedor`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE produtos (
+idProduto INT(11) AUTO_INCREMENT PRIMARY KEY,
+nomeProduto Varchar(45) NOT NULL,
+material VARCHAR(45) NOT NULL, 
+tratamento VARCHAR(45) NOT NULL,
+descricao VARCHAR(45) NOT NULL,
+esf_ini DECIMAL(4,2) NOT NULL,
+esf_fim DECIMAL(4,2) NOT NULL,
+cil_ini DECIMAL(4,2) NOT NULL,
+cil_fim DECIMAL(4,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('ORMA CRIZAL','CR39','CRIZAL','LENTE ORMA CRIZAL', -0.25, -2.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('ORMA CRIZAL','CR39','CRIZAL','LENTE ORMA CRIZAL', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('ORMA CRIZAL','CR39','CRIZAL','LENTE ORMA CRIZAL', -4.25, -6.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('KLAR UV 1.56 AR','CR39','ANTIREFLEXO','LENTE KLAR UV 1.56 AR', -0.25, -2.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('KLAR UV 1.56 AR','CR39','ANTIREFLEXO','LENTE KLAR UV 1.56 AR', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('AIRWEAR','POLICARBONATO','CRIZAL','LENTE AIRWEAR CRIZAL', -0.25, -5.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('KLAR UV POLY AR','POLICARBONATO','ANTIREFLEXO','LENTE KLAR UV POLY AR', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('TRIVEX','TRIVEX','ULTRAX','LENTE ULTRAX TRIVEX', -2.25, -4.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('STYLIS','STYLIS','CRIZAL ALIZE','LENTE STYLIS CRIZAL ALIZE', -4.25, -8.00, -0.25, -2.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('KLAR UV 1.56 AR','CR39','ANTIREFLEXO','LENTE KLAR UV 1.56 AR', 0.00, -4.00, -0.25, -4.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('KLAR UV POLI','POLICARBONATO','ANTIREFLEXO','LENTE KLAR UV POLI AR', 0.00, -5.00, -0.25, -5.00);
+insert into produtos (nomeProduto,material, tratamento,descricao, esf_ini, esf_fim, cil_ini, cil_fim) values ('OFF-RANGE','CR39','INCOLOR','LENTE OFF-RANGE', 0.00, -3.00, -0.25, -3.00);
+
+
+
+
+select * from produtos where esf_ini >= ? and esf_fim <= ? and cil_ini >= ? and cil_fim <= ?
+
+
+
+Consulta Fornecedor, Produto, Valor :
+-------------------------------------
+
+   select (select nome_fornecedor from fornecedor where tabela.id_fornecedor=fornecedor.id_fornecedor) as Fornecedor,
+   nome_produto as Produto,
+   tbl_valor as Valor from produto
+   natural join
+   tabela
+   
+   select (select nome_fornecedor from fornecedor where tabela.id_fornecedor=fornecedor.id_fornecedor) as Fornecedor,
+   nome_produto as Produto,
+   tbl_valor as Valor from produto
+   natural join
+   tabela
+   where tabela.id_produto=3;
+
+   SELECT   
+  p.nomeProduto,   
+  f.nomeFornecedor,   
+  tc.valorProduto   
+FROM   
+  produto p,   
+  fornecedor f,   
+  tabela_custo tc   
+WHERE   
+  tc.idProduto = p.idProduto   
+  AND tc.idFornecedor = f.idFornecedor   
+  AND p.nomeProduto = 'bifocal'   
+; 
+
+   
+
+
